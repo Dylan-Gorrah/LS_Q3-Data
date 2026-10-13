@@ -337,7 +337,7 @@ footer .meta{font-family:var(--font-m);font-size:var(--t-xs);color:var(--ink-fai
   <div class="shell">
     <span class="eyebrow">Wiskunde</span>
     <h2>Vier uit elke vyf leerders slaag nou Wiskunde.</h2>
-    <p>Dit is die vak waaroor ouers die meeste vra, so kom ons sê dit duidelik: oor die hele skool het die Wiskunde-slaagsyfer van 70% na 80% gegaan. Dit het in elke graad behalwe Graad 1 opgegaan of gelyk gebly, en Graad 7 het van 17% na 76% gespring. Graad 8 het skaars beweeg — meer daaroor in afdeling 07.</p>
+    <p>Dit is die vak waaroor ouers die meeste vra, so kom ons sê dit duidelik: oor die hele skool het die Wiskunde-slaagsyfer van 70% na 80% gegaan. Dit het in elke graad behalwe Graad 1 opgegaan of gelyk gebly, en Graad 7 het van 17% na 76% gespring. Graad 8 het skaars beweeg — meer daaroor in afdeling 08.</p>
     <div class="mgrid">
       <div><span class="k">Graad 6</span><span class="v num">90.3%</span></div>
       <div><span class="k">Graad 9</span><span class="v num">83.3%</span></div>
@@ -416,10 +416,47 @@ footer .meta{font-family:var(--font-m);font-size:var(--t-xs);color:var(--ink-fai
   </div>
 </section>
 
-<!-- 07 STILL TO WORK ON -->
-<section class="sec" id="s7" style="background:var(--surface-2);border-top:1px solid var(--border)">
+<!-- 07 FIFTY PERCENT AND UP (grades 1-9) -->
+<section class="sec" id="s50" style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="shell">
-    <div class="sechead"><span class="n">07</span><h2>Waar ons nog moet werk</h2></div>
+    <div class="sechead"><span class="n">07</span><h2>Hoeveel leerders haal 50%?</h2></div>
+    <div class="rule"></div>
+    <p class="lede rv" style="margin-bottom:2rem">In die meeste vakke is 40% genoeg om te slaag. Maar 50% is ’n beter teken dat ’n leerder die werk regtig ken. So lyk dit vir Graad 1 tot 9.</p>
+    <div class="wins rv" id="p50wins"></div>
+    <div class="panel rv" style="margin-top:1.6rem">
+      <div class="ctop">
+        <div><div class="ctitle">Leerders met ’n gemiddeld van 50% of meer</div><div class="cnote">Per graad · gemiddeld oor al hul vakke · die syfer bo elke groep is Kwartaal 3</div></div>
+        <div class="legend"><span><i style="background:var(--k1)"></i>Kwartaal 1</span><span><i style="background:var(--k2)"></i>Kwartaal 2</span><span><i style="background:var(--k3)"></i>Kwartaal 3</span></div>
+      </div>
+      <div id="chartP50"></div>
+      <details class="tbl"><summary>Wys die syfers as ’n tabel</summary><div class="tblwrap" id="tblP50"></div></details>
+    </div>
+    <div class="grid2" style="margin-top:1.6rem">
+      <div class="rv">
+        <div class="callout warn">
+          <svg aria-hidden="true"><use href="#i-info"/></svg>
+          <div><div class="ttl">Wat “in gevaar” beteken</div>
+          <p>Minder as 60 uit elke 100 leerders het in Kwartaal 3 50% of meer in daardie vak gekry. Baie van hulle slaag wel, maar net-net. ’n Klein daling in die eindeksamen kan hulle laat druip.</p></div>
+        </div>
+        <div class="callout" style="margin-top:1.2rem">
+          <svg aria-hidden="true"><use href="#i-target"/></svg>
+          <div><div class="ttl">Graad 4 Wiskunde</div>
+          <p>74% van Graad 4 slaag Wiskunde, maar net <strong>11%</strong> kry 50% of meer. Die meeste sit tussen 40% en 49% — reg op die slaagpunt.</p></div>
+        </div>
+      </div>
+      <div class="panel rv">
+        <div class="ctitle" style="margin-bottom:.3rem">Vakke in gevaar</div>
+        <div class="cnote" style="margin-bottom:1.2rem">% leerders met 50%+ in die vak · K1 · K2 · K3</div>
+        <div class="sbars" id="danger"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 STILL TO WORK ON -->
+<section class="sec" id="s7">
+  <div class="shell">
+    <div class="sechead"><span class="n">08</span><h2>Waar ons nog moet werk</h2></div>
     <div class="rule"></div>
     <p class="lede rv" style="margin-bottom:1.8rem">Nie alles het in Kwartaal 3 opgegaan nie. Dit is die vakke wat die meeste aandag nodig het voor die eindeksamen.</p>
     <div class="grid2">
@@ -462,7 +499,7 @@ footer .meta{font-family:var(--font-m);font-size:var(--t-xs);color:var(--ink-fai
 (function(){
 "use strict";
 var GR=["R","1","2","3","4","5","6","7","8","9"];
-var D={"gradePass":{"t1":[100.0,92.0,93.0,89.6,80.2,76.2,75.4,84.5,85.6,86.5],"t2":[100.0,87.4,89.9,86.0,71.8,76.3,72.3,66.1,62.1,69.6],"t3":[100.0,88.7,95.2,88.8,84.1,90.9,86.8,84.1,79.0,82.8]},"learners":[80,144,136,98,143,135,134,103,81,66],"subjects":[["Lewensvaardighede",99.2,97.1,97.5],["Tegnologie",97.7,88.4,92.8],["Skeppende Kunste",94.7,52.5,90.0],["Afrikaans (Huistaal)",81.2,75.8,89.3],["Engels (EAT)",86.1,83.2,88.4],["Sosiale Wetenskappe",80.7,68.1,84.4],["Natuurwetenskappe",91.4,71.8,83.2],["Ekon. & Bestuurswet.",89.1,42.2,82.0],["Wiskunde",69.8,69.9,80.3],["Lewensoriëntering",89.5,81.9,79.6],["Natuurwet. & Tegnologie",78.6,56.0,79.1]],"byGrade":{"0":[["Afrikaans (Huistaal)",100.0,100.0,100.0],["Lewensvaardighede",100.0,100.0,100.0],["Wiskunde",100.0,100.0,100.0]],"1":[["Lewensvaardighede",97.9,94.6,95.1],["Engels (EAT)",93.8,90.5,93.1],["Wiskunde",87.0,85.0,84.6],["Afrikaans (Huistaal)",89.0,79.6,81.8]],"2":[["Lewensvaardighede",100.0,97.8,100.0],["Engels (EAT)",93.6,95.0,99.3],["Wiskunde",95.7,89.2,91.2],["Afrikaans (Huistaal)",82.9,77.7,90.4]],"3":[["Lewensvaardighede",100.0,96.9,100.0],["Engels (EAT)",87.9,83.7,89.8],["Wiskunde",91.9,85.7,88.8],["Afrikaans (Huistaal)",78.8,77.6,76.5]],"4":[["Lewensvaardighede",100.0,95.8,94.4],["Afrikaans (Huistaal)",68.3,58.0,92.3],["Sosiale Wetenskappe",97.9,83.8,86.7],["Engels (EAT)",73.9,69.2,81.1],["Natuurwet. & Tegnologie",82.4,56.6,76.2],["Wiskunde",58.5,67.1,74.1]],"5":[["Lewensvaardighede",99.3,99.2,100.0],["Engels (EAT)",83.0,79.7,96.3],["Sosiale Wetenskappe",62.2,75.0,91.1],["Natuurwet. & Tegnologie",80.0,58.6,90.4],["Afrikaans (Huistaal)",80.0,82.7,89.6],["Wiskunde",52.6,62.4,77.8]],"6":[["Afrikaans (Huistaal)",58.7,72.6,96.3],["Lewensvaardighede",97.8,96.3,94.8],["Wiskunde",68.8,80.7,90.3],["Sosiale Wetenskappe",83.3,57.8,89.6],["Engels (EAT)",70.3,74.1,79.1],["Natuurwet. & Tegnologie",73.2,52.6,70.9]],"7":[["Ekon. & Bestuurswet.",92.5,55.8,99.0],["Afrikaans (Huistaal)",80.2,53.4,89.3],["Tegnologie",98.1,93.3,89.3],["Skeppende Kunste",99.1,83.7,88.3],["Lewensoriëntering",83.2,65.4,87.4],["Natuurwetenskappe",86.9,92.3,86.4],["Engels (EAT)",90.7,84.8,76.7],["Wiskunde",54.2,17.3,75.7],["Sosiale Wetenskappe",75.7,49.0,65.0]],"8":[["Tegnologie",97.7,85.1,97.5],["Skeppende Kunste",95.4,15.7,96.3],["Engels (EAT)",97.7,87.4,95.1],["Afrikaans (Huistaal)",98.9,79.3,91.4],["Sosiale Wetenskappe",88.5,74.7,87.7],["Natuurwetenskappe",97.7,49.4,79.0],["Lewensoriëntering",94.3,90.8,70.4],["Ekon. & Bestuurswet.",88.5,48.3,66.7],["Wiskunde",11.5,26.4,27.2]],"9":[["Tegnologie",97.2,85.3,92.4],["Afrikaans (Huistaal)",91.7,88.4,84.8],["Skeppende Kunste",87.5,50.0,84.8],["Natuurwetenskappe",90.3,69.1,83.3],["Wiskunde",66.2,70.6,83.3],["Engels (EAT)",93.1,89.7,81.8],["Sosiale Wetenskappe",74.6,63.2,81.8],["Lewensoriëntering",93.1,95.6,78.8],["Ekon. & Bestuurswet.",84.5,13.4,74.2]]},"maths":{"t1":[100.0,87.0,95.7,91.9,58.5,52.6,68.8,54.2,11.5,66.2],"t2":[100.0,85.0,89.2,85.7,67.1,62.4,80.7,17.3,26.4,70.6],"t3":[100.0,84.6,91.2,88.8,74.1,77.8,90.3,75.7,27.2,83.3]},"dist80":{"t1":[45.3,46.4,27.6,32.1,18.1,10.0,11.2,13.5,17.9,17.5],"t2":[63.5,44.9,27.3,20.9,12.3,6.5,11.9,2.5,6.5,7.0],"t3":[73.8,47.5,33.5,37.0,29.8,27.8,22.4,12.2,10.6,13.0]},"allPass":{"t1":[100.0,84.2,80.9,77.8,47.9,31.9,45.3,43.9,11.5,55.6],"t2":[100.0,78.2,77.0,73.5,39.9,42.1,38.5,14.3,9.2,11.6],"t3":[100.0,79.9,89.7,76.5,62.9,67.4,62.7,52.4,22.2,60.6]},"improved":[[6,"Afrikaans (Huistaal)",58.7,72.6,96.3],[5,"Sosiale Wetenskappe",62.2,75.0,91.1],[5,"Wiskunde",52.6,62.4,77.8],[4,"Afrikaans (Huistaal)",68.3,58.0,92.3],[7,"Wiskunde",54.2,17.3,75.7],[6,"Wiskunde",68.8,80.7,90.3]],"recovered":[[8,"Skeppende Kunste",95.4,15.7,96.3],[9,"Ekon. & Bestuurswet.",84.5,13.4,74.2],[8,"Natuurwetenskappe",97.7,49.4,79.0],[8,"Ekon. & Bestuurswet.",88.5,48.3,66.7],[9,"Skeppende Kunste",87.5,50.0,84.8]],"focus":[[8,"Wiskunde",11.5,26.4,27.2],[8,"Lewensoriëntering",94.3,90.8,70.4],[9,"Lewensoriëntering",93.1,95.6,78.8],[7,"Sosiale Wetenskappe",75.7,49.0,65.0],[7,"Engels (EAT)",90.7,84.8,76.7],[9,"Engels (EAT)",93.1,89.7,81.8]]};
+var D={"gradePass":{"t1":[100.0,92.0,93.0,89.6,80.2,76.2,75.4,84.5,85.6,86.5],"t2":[100.0,87.4,89.9,86.0,71.8,76.3,72.3,66.1,62.1,69.6],"t3":[100.0,88.7,95.2,88.8,84.1,90.9,86.8,84.1,79.0,82.8]},"learners":[80,144,136,98,143,135,134,103,81,66],"subjects":[["Lewensvaardighede",99.2,97.1,97.5],["Tegnologie",97.7,88.4,92.8],["Skeppende Kunste",94.7,52.5,90.0],["Afrikaans (Huistaal)",81.2,75.8,89.3],["Engels (EAT)",86.1,83.2,88.4],["Sosiale Wetenskappe",80.7,68.1,84.4],["Natuurwetenskappe",91.4,71.8,83.2],["Ekon. & Bestuurswet.",89.1,42.2,82.0],["Wiskunde",69.8,69.9,80.3],["Lewensoriëntering",89.5,81.9,79.6],["Natuurwet. & Tegnologie",78.6,56.0,79.1]],"byGrade":{"0":[["Afrikaans (Huistaal)",100.0,100.0,100.0],["Lewensvaardighede",100.0,100.0,100.0],["Wiskunde",100.0,100.0,100.0]],"1":[["Lewensvaardighede",97.9,94.6,95.1],["Engels (EAT)",93.8,90.5,93.1],["Wiskunde",87.0,85.0,84.6],["Afrikaans (Huistaal)",89.0,79.6,81.8]],"2":[["Lewensvaardighede",100.0,97.8,100.0],["Engels (EAT)",93.6,95.0,99.3],["Wiskunde",95.7,89.2,91.2],["Afrikaans (Huistaal)",82.9,77.7,90.4]],"3":[["Lewensvaardighede",100.0,96.9,100.0],["Engels (EAT)",87.9,83.7,89.8],["Wiskunde",91.9,85.7,88.8],["Afrikaans (Huistaal)",78.8,77.6,76.5]],"4":[["Lewensvaardighede",100.0,95.8,94.4],["Afrikaans (Huistaal)",68.3,58.0,92.3],["Sosiale Wetenskappe",97.9,83.8,86.7],["Engels (EAT)",73.9,69.2,81.1],["Natuurwet. & Tegnologie",82.4,56.6,76.2],["Wiskunde",58.5,67.1,74.1]],"5":[["Lewensvaardighede",99.3,99.2,100.0],["Engels (EAT)",83.0,79.7,96.3],["Sosiale Wetenskappe",62.2,75.0,91.1],["Natuurwet. & Tegnologie",80.0,58.6,90.4],["Afrikaans (Huistaal)",80.0,82.7,89.6],["Wiskunde",52.6,62.4,77.8]],"6":[["Afrikaans (Huistaal)",58.7,72.6,96.3],["Lewensvaardighede",97.8,96.3,94.8],["Wiskunde",68.8,80.7,90.3],["Sosiale Wetenskappe",83.3,57.8,89.6],["Engels (EAT)",70.3,74.1,79.1],["Natuurwet. & Tegnologie",73.2,52.6,70.9]],"7":[["Ekon. & Bestuurswet.",92.5,55.8,99.0],["Afrikaans (Huistaal)",80.2,53.4,89.3],["Tegnologie",98.1,93.3,89.3],["Skeppende Kunste",99.1,83.7,88.3],["Lewensoriëntering",83.2,65.4,87.4],["Natuurwetenskappe",86.9,92.3,86.4],["Engels (EAT)",90.7,84.8,76.7],["Wiskunde",54.2,17.3,75.7],["Sosiale Wetenskappe",75.7,49.0,65.0]],"8":[["Tegnologie",97.7,85.1,97.5],["Skeppende Kunste",95.4,15.7,96.3],["Engels (EAT)",97.7,87.4,95.1],["Afrikaans (Huistaal)",98.9,79.3,91.4],["Sosiale Wetenskappe",88.5,74.7,87.7],["Natuurwetenskappe",97.7,49.4,79.0],["Lewensoriëntering",94.3,90.8,70.4],["Ekon. & Bestuurswet.",88.5,48.3,66.7],["Wiskunde",11.5,26.4,27.2]],"9":[["Tegnologie",97.2,85.3,92.4],["Afrikaans (Huistaal)",91.7,88.4,84.8],["Skeppende Kunste",87.5,50.0,84.8],["Natuurwetenskappe",90.3,69.1,83.3],["Wiskunde",66.2,70.6,83.3],["Engels (EAT)",93.1,89.7,81.8],["Sosiale Wetenskappe",74.6,63.2,81.8],["Lewensoriëntering",93.1,95.6,78.8],["Ekon. & Bestuurswet.",84.5,13.4,74.2]]},"maths":{"t1":[100.0,87.0,95.7,91.9,58.5,52.6,68.8,54.2,11.5,66.2],"t2":[100.0,85.0,89.2,85.7,67.1,62.4,80.7,17.3,26.4,70.6],"t3":[100.0,84.6,91.2,88.8,74.1,77.8,90.3,75.7,27.2,83.3]},"dist80":{"t1":[45.3,46.4,27.6,32.1,18.1,10.0,11.2,13.5,17.9,17.5],"t2":[63.5,44.9,27.3,20.9,12.3,6.5,11.9,2.5,6.5,7.0],"t3":[73.8,47.5,33.5,37.0,29.8,27.8,22.4,12.2,10.6,13.0]},"allPass":{"t1":[100.0,84.2,80.9,77.8,47.9,31.9,45.3,43.9,11.5,55.6],"t2":[100.0,78.2,77.0,73.5,39.9,42.1,38.5,14.3,9.2,11.6],"t3":[100.0,79.9,89.7,76.5,62.9,67.4,62.7,52.4,22.2,60.6]},"improved":[[6,"Afrikaans (Huistaal)",58.7,72.6,96.3],[5,"Sosiale Wetenskappe",62.2,75.0,91.1],[5,"Wiskunde",52.6,62.4,77.8],[4,"Afrikaans (Huistaal)",68.3,58.0,92.3],[7,"Wiskunde",54.2,17.3,75.7],[6,"Wiskunde",68.8,80.7,90.3]],"recovered":[[8,"Skeppende Kunste",95.4,15.7,96.3],[9,"Ekon. & Bestuurswet.",84.5,13.4,74.2],[8,"Natuurwetenskappe",97.7,49.4,79.0],[8,"Ekon. & Bestuurswet.",88.5,48.3,66.7],[9,"Skeppende Kunste",87.5,50.0,84.8]],"focus":[[8,"Wiskunde",11.5,26.4,27.2],[8,"Lewensoriëntering",94.3,90.8,70.4],[9,"Lewensoriëntering",93.1,95.6,78.8],[7,"Sosiale Wetenskappe",75.7,49.0,65.0],[7,"Engels (EAT)",90.7,84.8,76.7],[9,"Engels (EAT)",93.1,89.7,81.8]],"p50":{"t1":[87.0,83.7,86.9,69.7,57.0,64.0,74.8,87.4,84.7],"t2":[81.0,82.7,75.5,53.8,57.9,57.0,34.3,44.8,46.4],"t3":[84.0,84.6,87.8,83.2,88.9,85.8,79.6,69.1,69.7]},"p50marks":{"t1":[86.5,86.5,79.5,65.0,61.9,63.0,74.7,74.2,75.7],"t2":[81.5,83.3,75.3,54.7,57.0,54.6,46.3,46.5,49.5],"t3":[86.4,89.3,84.2,66.9,84.2,76.7,74.1,65.8,73.7]},"p50n":[144,136,98,143,135,134,103,81,66],"danger":[[8,"Wiskunde",5.7,0.0,7.4],[4,"Wiskunde",19.7,18.9,11.2],[8,"Natuurwetenskappe",93.1,29.9,48.1],[7,"Sosiale Wetenskappe",58.9,31.7,50.5],[4,"Engels (EAT)",45.8,48.3,52.4],[7,"Wiskunde",31.8,3.8,53.4],[6,"Natuurwet. & Tegnologie",58.7,32.6,59.0],[9,"Ekon. & Bestuurswet.",66.2,1.5,59.1],[7,"Engels (EAT)",74.8,75.2,59.2]]};
 D.wins=[
  {ic:"i-check",v:"87%",h:"Byna nege uit elke tien uitslae is ’n slaagpunt",p:"Van die 6 471 vakpunte in Kwartaal 3 het 86,8% die slaagvereiste gehaal. Dit is ons beste kwartaal vanjaar: Kwartaal 1 was 84% en Kwartaal 2 was 75%."},
  {ic:"i-people",v:"769",h:"Leerders het elke vak geslaag",p:"Twee uit elke drie leerders het geen druipvak op hul Kwartaal 3-rapport nie. In Kwartaal 2 was dit 581."},
@@ -511,16 +548,17 @@ document.addEventListener("click",hideTip);
 window.addEventListener("scroll",function(){if(tipOwner)hideTip();},{passive:true});
 
 /* ---------- grouped columns: three quarters per grade ---------- */
-function grouped(id,ser,max,ticks,axisTitle,subRow,tipNote,label){
+function grouped(id,ser,max,ticks,axisTitle,subRow,tipNote,label,off){
+  off=off||0;var labs=GR.slice(off),nm=function(i){return gname(i+off);};
   var W=width(id),H=narrow()?290:310,PL=38,PR=6,PT=26,PB=subRow?66:40;
-  var s=svg(W,H,label),iw=W-PL-PR,ih=H-PT-PB,bw=iw/10;
+  var s=svg(W,H,label),iw=W-PL-PR,ih=H-PT-PB,bw=iw/labs.length;
   var y=function(v){return PT+ih-v/max*ih;};
   ticks.forEach(function(g){
     s.appendChild(el("line",{x1:PL,x2:W-PR,y1:y(g),y2:y(g),class:"ax","stroke-dasharray":g?"2 5":"0",opacity:g?.5:1}));
     s.appendChild(txt(PL-8,y(g)+4,g+"%","axlab","end"));
   });
   var w=Math.max(5,Math.min(16,(bw-10)/3)),gap=2,gw=3*w+2*gap;
-  GR.forEach(function(g,i){
+  labs.forEach(function(g,i){
     var x0=PL+bw*i+(bw-gw)/2;
     [ser.t1[i],ser.t2[i],ser.t3[i]].forEach(function(v,k){
       var x=x0+k*(w+gap),h=Math.max(2,ih-(y(v)-PT));
@@ -532,11 +570,11 @@ function grouped(id,ser,max,ticks,axisTitle,subRow,tipNote,label){
       if(k===2){var lb=txt(x+w/2,y(v)-7,Math.round(v),"vlab");lb.setAttribute("class","vlab pop");
         lb.style.transitionDelay=(500+i*45)+"ms";lb.style.fontSize="11px";lb.style.fill="var(--ink)";s.appendChild(lb);}
     });
-    s.appendChild(txt(PL+bw*i+bw/2,H-PB+22,GR[i],"axlab"));
+    s.appendChild(txt(PL+bw*i+bw/2,H-PB+22,labs[i],"axlab"));
     if(subRow){var n=txt(PL+bw*i+bw/2,H-PB+38,subRow[i],"axlab");n.style.fontSize="9.5px";n.style.opacity=".8";s.appendChild(n);}
-    var hit=el("rect",{x:PL+bw*i,y:PT-14,width:bw,height:ih+14,class:"hit",rx:2,tabindex:0,"aria-label":gname(i)});
-    bindHit(hit,function(){return tipHTML(gname(i),[ser.t1[i],ser.t2[i],ser.t3[i]],tipNote?tipNote(i):"");});
-    hit.addEventListener("focus",function(){var b=hit.getBoundingClientRect();showTip({clientX:b.left+b.width/2,clientY:b.top+30},tipHTML(gname(i),[ser.t1[i],ser.t2[i],ser.t3[i]],tipNote?tipNote(i):""),hit);});
+    var hit=el("rect",{x:PL+bw*i,y:PT-14,width:bw,height:ih+14,class:"hit",rx:2,tabindex:0,"aria-label":nm(i)});
+    bindHit(hit,function(){return tipHTML(nm(i),[ser.t1[i],ser.t2[i],ser.t3[i]],tipNote?tipNote(i):"");});
+    hit.addEventListener("focus",function(){var b=hit.getBoundingClientRect();showTip({clientX:b.left+b.width/2,clientY:b.top+30},tipHTML(nm(i),[ser.t1[i],ser.t2[i],ser.t3[i]],tipNote?tipNote(i):""),hit);});
     hit.addEventListener("blur",hideTip);
     s.insertBefore(hit,s.firstChild);
   });
@@ -550,6 +588,23 @@ function chartGrade(){
 function chartDist(){
   grouped("chartDist",D.dist80,80,[0,20,40,60,80],"GRAAD",null,
     function(){return "Aandeel uitslae van 80%+";},"Uitslae van 80% of hoër per graad");
+}
+
+function chartP50(){
+  grouped("chartP50",D.p50,100,[0,25,50,75,100],"GRAAD  \u00B7  AANTAL LEERDERS IN KWARTAAL 3 ONDER",D.p50n,
+    function(i){return D.p50n[i]+" leerders \u00B7 "+Math.round(D.p50marks.t3[i])+"% van vakpunte is 50%+";},"Leerders met ’n gemiddeld van 50% of meer, Graad 1 tot 9",1);
+}
+function buildP50(){
+  var t=[
+   {ic:"i-people",v:"83%",h:"Leerders met ’n gemiddeld van 50% of meer",p:"860 van die 1 040 leerders in Graad 1 tot 9. In Kwartaal 2 was dit 61%, en in Kwartaal 1 76%."},
+   {ic:"i-check",v:"77%",h:"Vakpunte van 50% of meer",p:"Van al die punte in Graad 1 tot 9 in Kwartaal 3. Kwartaal 1 was 73% en Kwartaal 2 was 59%."},
+   {ic:"i-target",v:String(D.danger.length),h:"Vakke in gevaar",p:"Graad-en-vak kombinasies waar minder as 60% van die leerders 50% gehaal het. Drie daarvan is Wiskunde en twee is Engels."}];
+  var h="";t.forEach(function(w){h+='<div class="win"><span class="ic"><svg aria-hidden="true"><use href="#'+w.ic+'"/></svg></span><span class="v">'+w.v+'</span><h3>'+w.h+'</h3><p>'+w.p+'</p></div>';});
+  document.getElementById("p50wins").innerHTML=h;
+  var tb='<table><thead><tr><th>Graad</th><th>Leerders (K3)</th><th>K1 %</th><th>K2 %</th><th>K3 %</th><th>K2\u2192K3</th><th>Vakpunte 50%+ (K3)</th></tr></thead><tbody>';
+  D.p50n.forEach(function(n,i){var a=D.p50,d=a.t3[i]-a.t2[i];
+    tb+='<tr><td>'+gname(i+1)+'</td><td>'+n+'</td><td>'+f1(a.t1[i])+'</td><td>'+f1(a.t2[i])+'</td><td>'+f1(a.t3[i])+'</td><td class="'+cls(d)+'">'+sgn(d)+'</td><td>'+f1(D.p50marks.t3[i])+'%</td></tr>';});
+  document.getElementById("tblP50").innerHTML=tb+'</tbody></table>';
 }
 
 /* ---------- maths: three dots per grade ---------- */
@@ -658,13 +713,15 @@ function buildWins(){
   document.getElementById("winPills").innerHTML=p;
 }
 
-function charts(){chartGrade();chartMaths();chartDist();}
+function charts(){chartGrade();chartMaths();chartDist();chartP50();}
 function init(){
   buildWins();buildChips();
   bars("topSubjects",D.subjects.slice(0,5),false);
   bars("improved",D.improved,true);
   bars("recovered",D.recovered,true);
   bars("focus",D.focus,true);
+  bars("danger",D.danger,true);
+  buildP50();
   renderSubjects();tables();charts();
 
   var root=document.documentElement,btn=document.getElementById("themeBtn");
