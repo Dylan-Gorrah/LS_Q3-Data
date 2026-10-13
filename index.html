@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="af" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FCFDFE">
+<title>Lowryville Intermediêre Skool · Hoe dit met ons leerders gaan — Kwartaal 1 tot 3, 2026</title>
+<meta name="description" content="Kwartaal 1, 2 en 3 se uitslae vir 2026 — hoeveel leerders slaag, vak vir vak en graad vir graad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFDFE; --surface:#FFFFFF; --surface-2:#F4F8FC;
+  --ink:#131A22; --ink-muted:#4E5D6C; --ink-faint:#7A8A9A;
+  --navy:#0E2A4E;
+  --sky:#0A84D8; --sky-text:#0B6DB4; --sky-solid:#0A73BE; --sky-deep:#075E9E;
+  --sky-wash:rgba(10,132,216,.075); --sky-tint:#EAF3FB;
+  --border:#E2E9F0; --border-strong:#C7D3DE;
+  --up:#197A53; --down:#C0392F;
+  --amber:#F2B705; --amber-edge:#A8760A; --amber-text:#8A5A00;
+  --k1:#9384C9; --k2:#D7A000; --k3:#0A7FD0; --k2-text:#8A5A00;
+  --grain:.02;
+  --font-d:"Fraunces","Iowan Old Style",Palatino,serif;
+  --font-b:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-m:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --max:1080px;
+  --t-xs:.8125rem; --t-sm:.9375rem;
+  --t-base:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --t-lg:clamp(1.1875rem,1.08rem + .45vw,1.375rem);
+  --t-xl:clamp(1.45rem,1.25rem + .9vw,1.9rem);
+  --t-2xl:clamp(1.85rem,1.5rem + 1.6vw,2.75rem);
+  --t-4xl:clamp(2.6rem,1.75rem + 4.2vw,5.2rem);
+}
+[data-theme=dark]{
+  --paper:#070D14; --surface:#0D141D; --surface-2:#111A24;
+  --ink:#E8EEF4; --ink-muted:#9CACBB; --ink-faint:#64768A;
+  --sky:#56B8F5; --sky-text:#7BC9F8; --sky-solid:#56B8F5; --sky-deep:#0A3A5E;
+  --sky-wash:rgba(86,184,245,.1); --sky-tint:#0E2233;
+  --border:#1A2431; --border-strong:#2B3947;
+  --up:#43C692; --down:#F2705F;
+  --amber:#F5C452; --amber-edge:#F5C452; --amber-text:#F5C452; --grain:.035;
+  --k1:#8E7FD0; --k2:#B8861A; --k3:#2E8FD6; --k2-text:#F5C452;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-b);
+  font-size:var(--t-base);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  transition:background .5s var(--ease),color .5s var(--ease)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(120vw 80vh at 10% -14%,var(--sky-wash),transparent 60%)}
+body::after{content:"";position:fixed;inset:-200%;pointer-events:none;z-index:1;opacity:var(--grain);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+svg{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--font-d);font-weight:500;letter-spacing:-.03em;line-height:1.1;margin:0;
+  font-variation-settings:"SOFT" 0,"WONK" 0}
+p{margin:0 0 1em}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:2px}
+::selection{background:var(--sky);color:#fff}
+.num{font-family:var(--font-m);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.eyebrow{font-family:var(--font-m);font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.shell{max-width:var(--max);margin:0 auto;padding:0 clamp(1.15rem,4.5vw,2rem)}
+.wrap{position:relative;z-index:2}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* top bar */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:55;display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.6rem clamp(1.15rem,4.5vw,2rem);
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
+  border-bottom:1px solid transparent;transform:translateY(-102%)}
+.topbar.on{transform:translateY(0);border-bottom-color:var(--border);transition:transform .5s var(--ease-out),border-color .4s}
+.topbar b{font-family:var(--font-m);font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;
+  font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.iconbtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:none;
+  border:1px solid var(--border);background:var(--surface);color:var(--ink);border-radius:3px;cursor:pointer;
+  position:relative;overflow:hidden;transition:border-color .3s,transform .3s var(--ease)}
+.iconbtn:active{transform:scale(.94)}
+.iconbtn svg{width:19px;height:19px}
+[data-theme=light] #themeBtn .ic-moon{opacity:0;transform:rotate(-70deg) scale(.5);position:absolute}
+[data-theme=dark] #themeBtn .ic-sun{opacity:0;transform:rotate(70deg) scale(.5);position:absolute}
+#themeBtn .ic-sun,#themeBtn .ic-moon{transition:transform .5s var(--ease-out),opacity .35s}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:60}
+.progress i{display:block;height:100%;width:0;background:var(--sky);transition:width .12s linear}
+
+/* PAGE HEAD */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes ruleIn{to{transform:scaleX(1)}}
+.fu{opacity:0;animation:fadeUp .95s var(--ease-out) forwards}
+.school{display:flex;align-items:center;gap:.8rem;animation-delay:.05s}
+.school i{display:block;width:30px;height:2px;background:var(--sky);transform:scaleX(0);transform-origin:left;
+  animation:ruleIn 1s .2s var(--ease-out) forwards}
+.school span{font-family:var(--font-m);font-size:clamp(.8125rem,.74rem + .3vw,.95rem);letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink);font-weight:500}
+
+/* sections */
+.sec{padding:clamp(3.5rem,9vh,6.5rem) 0}
+.sechead{display:flex;align-items:baseline;gap:.9rem;margin-bottom:.9rem}
+.sechead .n{font-family:var(--font-m);font-size:var(--t-xs);letter-spacing:.1em;color:var(--sky-text)}
+.sechead h2{font-size:var(--t-2xl);flex:1}
+.sechead h1{font-size:clamp(2.15rem,1.6rem + 2.4vw,3.5rem);letter-spacing:-.038em;flex:1}
+.sec.top{padding-top:clamp(4.5rem,12vh,7.5rem)}
+.sec.top .sechead{margin-top:clamp(1.2rem,3.5vh,2rem)}
+.rule{height:1px;background:var(--border);margin-bottom:2rem}
+.lede{font-size:var(--t-lg);color:var(--ink-muted);max-width:56ch}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease-out),transform .85s var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:clamp(1.1rem,3.2vw,1.8rem)}
+.grid2{display:grid;gap:1.6rem}
+@media(min-width:880px){.grid2{grid-template-columns:1fr 1fr;gap:2.2rem}}
+
+/* WIN CARDS */
+.wins{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
+@media(min-width:640px){.wins{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.wins{grid-template-columns:repeat(3,1fr)}}
+.win{background:var(--surface);padding:1.5rem 1.35rem;display:flex;flex-direction:column;gap:.5rem;transition:background .35s}
+.win:hover{background:var(--sky-tint)}
+.win .ic{width:30px;height:30px;color:var(--sky);margin-bottom:.15rem}
+.win .ic svg{width:30px;height:30px}
+.win .v{font-family:var(--font-m);font-size:clamp(2rem,1.5rem + 2vw,2.7rem);letter-spacing:-.05em;line-height:1;color:var(--sky-text)}
+.win h3{font-size:1.0625rem;font-family:var(--font-b);font-weight:600;letter-spacing:-.01em}
+.win p{margin:0;font-size:var(--t-sm);color:var(--ink-muted);line-height:1.55}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font-family:var(--font-m);font-size:var(--t-xs);letter-spacing:.04em;padding:0 .85rem;height:44px;min-width:46px;
+  display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);background:var(--surface);
+  color:var(--ink-muted);border-radius:3px;cursor:pointer;transition:all .28s var(--ease)}
+.chip:hover{border-color:var(--sky);color:var(--ink)}
+.chip.on{background:var(--sky-solid);border-color:var(--sky-solid);color:#fff}
+[data-theme=dark] .chip.on{color:#05121F}
+
+/* chart chrome */
+.ctop{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:.8rem;margin-bottom:1.2rem}
+.ctitle{font-family:var(--font-d);font-size:var(--t-lg);letter-spacing:-.02em;line-height:1.25}
+.cnote{font-family:var(--font-m);font-size:.6875rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-top:.3rem}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-family:var(--font-m);font-size:var(--t-xs);color:var(--ink-muted)}
+.legend i{display:inline-block;width:14px;height:8px;border-radius:2px;vertical-align:middle;margin-right:.45rem}
+svg .axlab{font-family:var(--font-m);font-size:11px;fill:var(--ink-faint);letter-spacing:.03em}
+svg .vlab{font-family:var(--font-m);font-size:12px;fill:var(--ink)}
+svg .ax{stroke:var(--border);stroke-width:1}
+svg .gro{transform:scaleY(0);transform-origin:bottom;transition:transform .9s var(--ease-out)}
+.in svg .gro{transform:scaleY(1)}
+svg .grx{transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease-out)}
+.in svg .grx{transform:scaleX(1)}
+svg .pop{opacity:0;transition:opacity .55s .45s var(--ease)}
+.in svg .pop{opacity:1}
+
+/* subject bars · three quarters */
+.sbars{display:grid;gap:1rem;margin-top:.4rem}
+.sbar .top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.4rem}
+.sbar .nm{font-size:var(--t-sm);font-weight:500;min-width:0}
+.sbar .vals{font-family:var(--font-m);font-size:var(--t-sm);white-space:nowrap;color:var(--ink-faint)}
+.sbar .vals b{color:var(--ink);font-weight:500}
+.sbar .vals .ar{font-size:.85em;margin:0 .15rem 0 .3rem}
+.sbar .tracks{display:grid;gap:2px}
+.sbar .tr{height:6px;background:var(--surface-2);border-radius:2px;position:relative;overflow:hidden}
+.sbar .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:0 2px 2px 0;
+  transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease-out)}
+.in .sbar .tr i{transform:scaleX(1)}
+.sbar .tr.k1 i{background:var(--k1)}
+.sbar .tr.k2 i{background:var(--k2);transition-delay:.08s}
+.sbar .tr.k3 i{background:var(--k3);transition-delay:.16s}
+.sbar .tr.k3{height:8px}
+
+/* chart tooltip */
+.tip{position:fixed;z-index:70;pointer-events:none;background:var(--surface);border:1px solid var(--border-strong);
+  border-radius:3px;padding:.6rem .75rem;font-family:var(--font-m);font-size:12px;line-height:1.7;color:var(--ink);
+  box-shadow:0 8px 28px rgba(8,20,36,.14);opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;min-width:160px}
+.tip.on{opacity:1;transform:none}
+.tip .h{font-family:var(--font-b);font-weight:600;font-size:13px;margin-bottom:.25rem;letter-spacing:-.01em}
+.tip .r{display:flex;justify-content:space-between;gap:1.2rem;color:var(--ink-muted)}
+.tip .r b{color:var(--ink);font-weight:500}
+.tip .r i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:.45rem;vertical-align:baseline}
+.tip .n{color:var(--ink-faint);border-top:1px solid var(--border);margin-top:.3rem;padding-top:.3rem}
+svg .hit{fill:transparent;cursor:pointer}
+svg .hit:hover,svg .hit.on{fill:var(--sky-wash)}
+
+/* table view */
+details.tbl{margin-top:1.1rem;border-top:1px solid var(--border);padding-top:.9rem}
+details.tbl summary{cursor:pointer;font-family:var(--font-m);font-size:var(--t-xs);letter-spacing:.06em;color:var(--sky-text);
+  list-style:none;display:inline-flex;align-items:center;gap:.5rem;min-height:44px}
+details.tbl summary::-webkit-details-marker{display:none}
+details.tbl summary::before{content:"+";font-size:1rem;width:1rem;text-align:center}
+details.tbl[open] summary::before{content:"\2013"}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.4rem}
+.tblwrap table{border-collapse:collapse;width:100%;min-width:520px;font-family:var(--font-m);font-size:var(--t-xs);font-variant-numeric:tabular-nums}
+.tblwrap th,.tblwrap td{padding:.45rem .5rem;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+.tblwrap th:first-child,.tblwrap td:first-child{text-align:left}
+.tblwrap thead th{color:var(--ink-faint);font-weight:500}
+.tblwrap td.up{color:var(--up)} .tblwrap td.dn{color:var(--down)}
+
+/* focus callout */
+.callout.warn{border-left-color:var(--k2)}
+.callout.warn svg{color:var(--k2-text)}
+.callout.warn .ttl{color:var(--k2-text)}
+.bigfig{font-family:var(--font-m);font-size:clamp(2.2rem,1.6rem + 2.4vw,3.2rem);letter-spacing:-.05em;line-height:1;color:var(--ink);margin:.2rem 0 .6rem}
+
+svg .gro,svg .pop{pointer-events:none}
+
+/* pill row */
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-m);font-size:var(--t-xs);
+  border:1px solid var(--border);border-radius:999px;padding:.4rem .9rem;color:var(--ink-muted)}
+.pill b{color:var(--ink);font-weight:500}
+.pill.good{border-color:color-mix(in srgb,var(--up) 40%,var(--border));color:var(--up)}
+.pill.good b{color:var(--up)}
+
+/* moment */
+.moment{background:var(--sky-deep);color:#fff;padding:clamp(3.5rem,10vh,6.5rem) 0;position:relative;overflow:hidden}
+.moment::before{content:"";position:absolute;inset:0;background:radial-gradient(70vw 70vh at 88% -8%,rgba(255,255,255,.16),transparent 62%)}
+.moment::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--navy);opacity:.45}
+.moment .shell{position:relative}
+.moment .eyebrow{color:rgba(255,255,255,.68)}
+.moment h2{color:#fff;font-size:var(--t-2xl);max-width:22ch;margin-top:.8rem}
+.moment p{color:rgba(255,255,255,.88);max-width:54ch;margin-top:1rem}
+.mgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem 1rem;margin-top:2.2rem}
+@media(min-width:760px){.mgrid{grid-template-columns:repeat(4,1fr)}}
+.mgrid div{border-top:1px solid rgba(255,255,255,.3);padding-top:.8rem}
+.mgrid .k{font-family:var(--font-m);font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.mgrid .v{font-family:var(--font-m);font-size:clamp(1.5rem,1.2rem + 1.2vw,2rem);letter-spacing:-.04em;margin-top:.25rem}
+
+/* accordion */
+.acc{border-top:1px solid var(--border)}
+.acc button{width:100%;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;background:none;border:0;
+  border-bottom:1px solid var(--border);padding:1.15rem 0;text-align:left;cursor:pointer;color:var(--ink);
+  font-family:var(--font-d);font-size:var(--t-lg);letter-spacing:-.02em;line-height:1.3;transition:color .3s}
+.acc button:hover,.acc button[aria-expanded=true]{color:var(--sky-text)}
+.acc .pm{width:20px;height:20px;position:relative;flex:none}
+.acc .pm::before,.acc .pm::after{content:"";position:absolute;background:currentColor;left:50%;top:50%;transition:transform .4s var(--ease-out)}
+.acc .pm::before{width:13px;height:1.5px;transform:translate(-50%,-50%)}
+.acc .pm::after{width:1.5px;height:13px;transform:translate(-50%,-50%)}
+.acc button[aria-expanded=true] .pm::after{transform:translate(-50%,-50%) rotate(90deg) scaleX(0)}
+.acc .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease-out);border-bottom:1px solid var(--border)}
+.acc .body.open{grid-template-rows:1fr}
+.acc .body>div{overflow:hidden;padding:0}
+.acc .body.open>div{padding:.2rem 0 1.4rem}
+.acc .body p{color:var(--ink-muted);max-width:66ch;margin:0 0 .8em}
+.acc .body p:last-child{margin-bottom:0}
+
+.callout{border:1px solid var(--border);border-left:2px solid var(--sky);background:var(--surface);
+  padding:1.15rem 1.3rem;border-radius:3px;display:grid;grid-template-columns:auto 1fr;gap:.9rem}
+.callout svg{width:20px;height:20px;color:var(--sky);margin-top:.2em}
+.callout p{margin:0;font-size:var(--t-sm);color:var(--ink-muted)}
+.callout .ttl{font-family:var(--font-m);font-size:.6875rem;letter-spacing:.11em;text-transform:uppercase;color:var(--sky-text);margin-bottom:.35rem}
+footer{border-top:1px solid var(--border);background:var(--surface-2);
+  padding:clamp(2.5rem,7vh,4rem) 0 calc(2.5rem + env(safe-area-inset-bottom))}
+footer p{font-size:var(--t-sm);color:var(--ink-muted);max-width:60ch}
+footer .meta{font-family:var(--font-m);font-size:var(--t-xs);color:var(--ink-faint);line-height:2}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.4M12 19.2v2.4M4.2 12H1.8M22.2 12h-2.4M6.5 6.5 4.8 4.8M19.2 19.2l-1.7-1.7M17.5 6.5l1.7-1.7M4.8 19.2l1.7-1.7"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M20 14.4A8.4 8.4 0 0 1 9.6 4a8.4 8.4 0 1 0 10.4 10.4Z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M3.5 12.6 9 18 20.5 6.5"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3.2 14.7 9l6.3.8-4.6 4.4 1.2 6.2L12 17.5 6.4 20.4l1.2-6.2L3 9.8 9.3 9Z"/></symbol>
+<symbol id="i-rise" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M3 17.5 9.5 11l4 4L21 7.5"/><path d="M15.5 7.5H21v5.5"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M3.5 4.5h6a3 3 0 0 1 3 3v12a2.4 2.4 0 0 0-2.4-2.4H3.5Z"/><path d="M20.5 4.5h-6a3 3 0 0 0-3 3v12a2.4 2.4 0 0 1 2.4-2.4h6.6Z"/></symbol>
+<symbol id="i-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20.5c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/><path d="M16.5 5.2a3.4 3.4 0 0 1 0 5.6M18 15.4c2.2.6 3.5 2.4 3.5 5.1"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="12" cy="12" r="8.8"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r=".9" fill="currentColor"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="M12 10.8v6M12 7.6v.7"/></symbol>
+<symbol id="i-paper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"><path d="M6 2.8h8L18.2 7v14.2H6Z"/><path d="M14 2.8V7h4.2M9 12.5h6M9 16h6"/></symbol>
+</defs></svg>
+
+<div class="progress"><i id="prog"></i></div>
+<header class="topbar" id="topbar">
+  <b>Lowryville Intermediêre Skool</b>
+  <button class="iconbtn" id="themeBtn" type="button" aria-label="Skakel oor na donker modus" aria-pressed="false">
+    <svg class="ic-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    <svg class="ic-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+  </button>
+</header>
+
+<div class="wrap"><main>
+
+<!-- 01 GOOD NEWS  ·  page opens here -->
+<section class="sec top" id="s1">
+  <div class="shell">
+    <div class="school fu"><i></i><span>Lowryville Intermediêre Skool</span></div>
+    <div class="sechead"><span class="n">01</span><h1>Die goeie nuus</h1></div>
+    <div class="rule"></div>
+    <p class="lede fu" style="margin-bottom:2.1rem;animation-delay:.3s">Ses dinge om ná Kwartaal 3 trots op te wees.</p>
+    <div class="wins rv" id="wins"></div>
+    <div class="pills rv" id="winPills"></div>
+  </div>
+</section>
+
+<!-- 02 BY GRADE -->
+<section class="sec" id="s2" style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="shell">
+    <div class="sechead"><span class="n">02</span><h2>Hoe dit met elke graad gaan</h2></div>
+    <div class="rule"></div>
+    <p class="lede rv" style="margin-bottom:1.8rem">Uit elke 100 vakuitslae in daardie graad, so baie was ’n slaagpunt. Elke graad het in Kwartaal 3 opgegaan.</p>
+    <div class="panel rv">
+      <div class="ctop">
+        <div><div class="ctitle">Slaagsyfer per graad</div><div class="cnote">Kwartaal 1, 2 en 3 · die syfer bo elke groep is Kwartaal 3</div></div>
+        <div class="legend"><span><i style="background:var(--k1)"></i>Kwartaal 1</span><span><i style="background:var(--k2)"></i>Kwartaal 2</span><span><i style="background:var(--k3)"></i>Kwartaal 3</span></div>
+      </div>
+      <div id="chartGrade"></div>
+      <details class="tbl"><summary>Wys die syfers as ’n tabel</summary><div class="tblwrap" id="tblGrade"></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 03 BY SUBJECT -->
+<section class="sec" id="s3">
+  <div class="shell">
+    <div class="sechead"><span class="n">03</span><h2>Vak vir vak</h2></div>
+    <div class="rule"></div>
+    <p class="lede rv" style="margin-bottom:1.4rem">Kies ’n graad om te sien hoe daardie klas in elk van sy vakke gevaar het.</p>
+    <div class="chips rv" id="gradeChips" role="group" aria-label="Kies ’n graad" style="margin-bottom:1.5rem"></div>
+    <div class="panel rv" id="subjPanel">
+      <div class="ctop">
+        <div><div class="ctitle" id="subjTitle">Graad 4</div><div class="cnote">Persentasie leerders wat elke vak slaag · gesorteer volgens Kwartaal 3</div></div>
+        <div class="legend"><span><i style="background:var(--k1)"></i>K1</span><span><i style="background:var(--k2)"></i>K2</span><span><i style="background:var(--k3)"></i>K3</span></div>
+      </div>
+      <div class="sbars" id="subjBars"></div>
+    </div>
+    <div class="rv" style="margin-top:1.5rem">
+      <div class="callout">
+        <svg aria-hidden="true"><use href="#i-info"/></svg>
+        <div><div class="ttl">Wat tel as ’n slaagpunt</div>
+        <p>Huistaal het <strong>50%</strong> nodig. Elke ander vak het <strong>40%</strong> nodig. Dit is die nasionale KABV-vereistes, nie die skool se eie nie.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENT -->
+<section class="moment">
+  <div class="shell">
+    <span class="eyebrow">Wiskunde</span>
+    <h2>Vier uit elke vyf leerders slaag nou Wiskunde.</h2>
+    <p>Dit is die vak waaroor ouers die meeste vra, so kom ons sê dit duidelik: oor die hele skool het die Wiskunde-slaagsyfer van 70% na 80% gegaan. Dit het in elke graad behalwe Graad 1 opgegaan of gelyk gebly, en Graad 7 het van 17% na 76% gespring. Graad 8 het skaars beweeg — meer daaroor in afdeling 07.</p>
+    <div class="mgrid">
+      <div><span class="k">Graad 6</span><span class="v num">90.3%</span></div>
+      <div><span class="k">Graad 9</span><span class="v num">83.3%</span></div>
+      <div><span class="k">Graad 5</span><span class="v num">77.8%</span></div>
+      <div><span class="k">Graad 7</span><span class="v num">75.7%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 MATHS CHART -->
+<section class="sec" id="s4">
+  <div class="shell">
+    <div class="sechead"><span class="n">04</span><h2>Wiskunde, graad vir graad</h2></div>
+    <div class="rule"></div>
+    <div class="panel rv">
+      <div class="ctop">
+        <div><div class="ctitle">Leerders wat Wiskunde slaag</div><div class="cnote">Slaagpunt 40% · verandering van Kwartaal 2 na 3 onder elke graad</div></div>
+        <div class="legend"><span><i style="background:var(--k1);border-radius:50%;width:9px;height:9px"></i>Kwartaal 1</span><span><i style="background:var(--k2);border-radius:50%;width:9px;height:9px"></i>Kwartaal 2</span><span><i style="background:var(--k3);border-radius:50%;width:11px;height:11px"></i>Kwartaal 3</span></div>
+      </div>
+      <div id="chartMaths"></div>
+      <details class="tbl"><summary>Wys die syfers as ’n tabel</summary><div class="tblwrap" id="tblMaths"></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 05 TOP RESULTS -->
+<section class="sec" id="s5" style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="shell">
+    <div class="sechead"><span class="n">05</span><h2>Ons sterkste uitslae</h2></div>
+    <div class="rule"></div>
+    <div class="grid2">
+      <div class="panel rv">
+        <div class="ctitle" style="margin-bottom:.3rem">Beste vakke oor die hele skool</div>
+        <div class="cnote" style="margin-bottom:1.2rem">K1 · K2 · K3 slaagsyfer</div>
+        <div class="sbars" id="topSubjects"></div>
+      </div>
+      <div class="panel rv">
+        <div class="ctitle" style="margin-bottom:.3rem">Grootste groei sedert die begin van die jaar</div>
+        <div class="cnote" style="margin-bottom:1.2rem">Kwartaal 1 vergelyk met Kwartaal 3</div>
+        <div class="sbars" id="improved"></div>
+      </div>
+    </div>
+    <div class="panel rv" style="margin-top:1.6rem">
+      <div class="ctop"><div><div class="ctitle">Leerders wat 80% of meer behaal</div>
+        <div class="cnote">Aandeel van uitslae op onderskeidingsvlak · die syfer bo elke groep is Kwartaal 3</div></div>
+        <div class="legend"><span><i style="background:var(--k1)"></i>Kwartaal 1</span><span><i style="background:var(--k2)"></i>Kwartaal 2</span><span><i style="background:var(--k3)"></i>Kwartaal 3</span></div></div>
+      <div id="chartDist"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 TERM 2 DIP, TERM 3 RECOVERY -->
+<section class="sec" id="s6">
+  <div class="shell">
+    <div class="sechead"><span class="n">06</span><h2>Van Kwartaal 2 na Kwartaal 3</h2></div>
+    <div class="rule"></div>
+    <div class="grid2">
+      <div class="rv">
+        <p class="lede">Kwartaal 2 was die eerste kwartaal met <strong>provinsiale eksamenvraestelle</strong>. Die vrae is buite die skool opgestel, en punte het in byna elke graad gedaal.</p>
+        <p style="color:var(--ink-muted)">Kwartaal 3 wys dat dit nie ’n patroon geword het nie. Elke graad het teruggekom, en die vakke wat in Kwartaal 2 die hardste getref is, het van die grootste spronge gemaak.</p>
+        <p style="color:var(--ink-muted)">Dit is ook nie net omdat sommige leerders die skool verlaat het nie. As ons net die leerders tel wat in albei kwartale hier was, gaan die slaagsyfer steeds van <strong>76%</strong> na <strong>87%</strong>.</p>
+      </div>
+      <div class="rv">
+        <div class="callout" style="margin-bottom:1.2rem">
+          <svg aria-hidden="true"><use href="#i-paper"/></svg>
+          <div><div class="ttl">Wat dit vir u kind beteken</div>
+          <p>Kyk na die patroon oor al drie kwartale, nie na een punt alleen nie. ’n Leerder wat in Kwartaal 2 gedaal en in Kwartaal 3 herstel het, is op koers. Die onderwyser kan u die klasgemiddeld vir elke vak wys.</p></div>
+        </div>
+        <div class="panel">
+          <div class="ctitle" style="margin-bottom:.3rem">Waar Kwartaal 2 die hardste getref het</div>
+          <div class="cnote" style="margin-bottom:1rem">En hoe dit in Kwartaal 3 lyk</div>
+          <div class="sbars" id="recovered"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 STILL TO WORK ON -->
+<section class="sec" id="s7" style="background:var(--surface-2);border-top:1px solid var(--border)">
+  <div class="shell">
+    <div class="sechead"><span class="n">07</span><h2>Waar ons nog moet werk</h2></div>
+    <div class="rule"></div>
+    <p class="lede rv" style="margin-bottom:1.8rem">Nie alles het in Kwartaal 3 opgegaan nie. Dit is die vakke wat die meeste aandag nodig het voor die eindeksamen.</p>
+    <div class="grid2">
+      <div class="rv">
+        <div class="callout warn">
+          <svg aria-hidden="true"><use href="#i-target"/></svg>
+          <div><div class="ttl">Graad 8 Wiskunde</div>
+          <div class="bigfig">27%</div>
+          <p>Net 27 uit elke 100 Graad 8-leerders slaag Wiskunde. Dit was onder 30% in al drie kwartale — die een syfer wat nie beweeg nie. Dit is ook die hoofrede waarom net <strong>22%</strong> van Graad 8 al hul vakke slaag.</p></div>
+        </div>
+        <div class="callout warn" style="margin-top:1.2rem">
+          <svg aria-hidden="true"><use href="#i-info"/></svg>
+          <div><div class="ttl">Lewensoriëntering, Graad 8 en 9</div>
+          <p>Albei was bo 90% in Kwartaal 1 en 2, en het in Kwartaal 3 na 70% en 79% gedaal. Dit is die grootste dalings van die kwartaal.</p></div>
+        </div>
+      </div>
+      <div class="panel rv">
+        <div class="ctitle" style="margin-bottom:.3rem">Laag of gedaal in Kwartaal 3</div>
+        <div class="cnote" style="margin-bottom:1.2rem">K1 · K2 · K3 slaagsyfer</div>
+        <div class="sbars" id="focus"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <div class="meta">
+      <div>Lowryville Intermediêre Skool · EMIS 300023304</div>
+      <div>De Aar · Pixley-ka-Seme · Noord-Kaap</div>
+      <div>Kwartaal 1 tot 3, 2026 · Bron: SA-SAMS · Opgedateer 13 Oktober 2026</div>
+    </div>
+  </div>
+</footer>
+
+</main></div>
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+var GR=["R","1","2","3","4","5","6","7","8","9"];
+var D={"gradePass":{"t1":[100.0,92.0,93.0,89.6,80.2,76.2,75.4,84.5,85.6,86.5],"t2":[100.0,87.4,89.9,86.0,71.8,76.3,72.3,66.1,62.1,69.6],"t3":[100.0,88.7,95.2,88.8,84.1,90.9,86.8,84.1,79.0,82.8]},"learners":[80,144,136,98,143,135,134,103,81,66],"subjects":[["Lewensvaardighede",99.2,97.1,97.5],["Tegnologie",97.7,88.4,92.8],["Skeppende Kunste",94.7,52.5,90.0],["Afrikaans (Huistaal)",81.2,75.8,89.3],["Engels (EAT)",86.1,83.2,88.4],["Sosiale Wetenskappe",80.7,68.1,84.4],["Natuurwetenskappe",91.4,71.8,83.2],["Ekon. & Bestuurswet.",89.1,42.2,82.0],["Wiskunde",69.8,69.9,80.3],["Lewensoriëntering",89.5,81.9,79.6],["Natuurwet. & Tegnologie",78.6,56.0,79.1]],"byGrade":{"0":[["Afrikaans (Huistaal)",100.0,100.0,100.0],["Lewensvaardighede",100.0,100.0,100.0],["Wiskunde",100.0,100.0,100.0]],"1":[["Lewensvaardighede",97.9,94.6,95.1],["Engels (EAT)",93.8,90.5,93.1],["Wiskunde",87.0,85.0,84.6],["Afrikaans (Huistaal)",89.0,79.6,81.8]],"2":[["Lewensvaardighede",100.0,97.8,100.0],["Engels (EAT)",93.6,95.0,99.3],["Wiskunde",95.7,89.2,91.2],["Afrikaans (Huistaal)",82.9,77.7,90.4]],"3":[["Lewensvaardighede",100.0,96.9,100.0],["Engels (EAT)",87.9,83.7,89.8],["Wiskunde",91.9,85.7,88.8],["Afrikaans (Huistaal)",78.8,77.6,76.5]],"4":[["Lewensvaardighede",100.0,95.8,94.4],["Afrikaans (Huistaal)",68.3,58.0,92.3],["Sosiale Wetenskappe",97.9,83.8,86.7],["Engels (EAT)",73.9,69.2,81.1],["Natuurwet. & Tegnologie",82.4,56.6,76.2],["Wiskunde",58.5,67.1,74.1]],"5":[["Lewensvaardighede",99.3,99.2,100.0],["Engels (EAT)",83.0,79.7,96.3],["Sosiale Wetenskappe",62.2,75.0,91.1],["Natuurwet. & Tegnologie",80.0,58.6,90.4],["Afrikaans (Huistaal)",80.0,82.7,89.6],["Wiskunde",52.6,62.4,77.8]],"6":[["Afrikaans (Huistaal)",58.7,72.6,96.3],["Lewensvaardighede",97.8,96.3,94.8],["Wiskunde",68.8,80.7,90.3],["Sosiale Wetenskappe",83.3,57.8,89.6],["Engels (EAT)",70.3,74.1,79.1],["Natuurwet. & Tegnologie",73.2,52.6,70.9]],"7":[["Ekon. & Bestuurswet.",92.5,55.8,99.0],["Afrikaans (Huistaal)",80.2,53.4,89.3],["Tegnologie",98.1,93.3,89.3],["Skeppende Kunste",99.1,83.7,88.3],["Lewensoriëntering",83.2,65.4,87.4],["Natuurwetenskappe",86.9,92.3,86.4],["Engels (EAT)",90.7,84.8,76.7],["Wiskunde",54.2,17.3,75.7],["Sosiale Wetenskappe",75.7,49.0,65.0]],"8":[["Tegnologie",97.7,85.1,97.5],["Skeppende Kunste",95.4,15.7,96.3],["Engels (EAT)",97.7,87.4,95.1],["Afrikaans (Huistaal)",98.9,79.3,91.4],["Sosiale Wetenskappe",88.5,74.7,87.7],["Natuurwetenskappe",97.7,49.4,79.0],["Lewensoriëntering",94.3,90.8,70.4],["Ekon. & Bestuurswet.",88.5,48.3,66.7],["Wiskunde",11.5,26.4,27.2]],"9":[["Tegnologie",97.2,85.3,92.4],["Afrikaans (Huistaal)",91.7,88.4,84.8],["Skeppende Kunste",87.5,50.0,84.8],["Natuurwetenskappe",90.3,69.1,83.3],["Wiskunde",66.2,70.6,83.3],["Engels (EAT)",93.1,89.7,81.8],["Sosiale Wetenskappe",74.6,63.2,81.8],["Lewensoriëntering",93.1,95.6,78.8],["Ekon. & Bestuurswet.",84.5,13.4,74.2]]},"maths":{"t1":[100.0,87.0,95.7,91.9,58.5,52.6,68.8,54.2,11.5,66.2],"t2":[100.0,85.0,89.2,85.7,67.1,62.4,80.7,17.3,26.4,70.6],"t3":[100.0,84.6,91.2,88.8,74.1,77.8,90.3,75.7,27.2,83.3]},"dist80":{"t1":[45.3,46.4,27.6,32.1,18.1,10.0,11.2,13.5,17.9,17.5],"t2":[63.5,44.9,27.3,20.9,12.3,6.5,11.9,2.5,6.5,7.0],"t3":[73.8,47.5,33.5,37.0,29.8,27.8,22.4,12.2,10.6,13.0]},"allPass":{"t1":[100.0,84.2,80.9,77.8,47.9,31.9,45.3,43.9,11.5,55.6],"t2":[100.0,78.2,77.0,73.5,39.9,42.1,38.5,14.3,9.2,11.6],"t3":[100.0,79.9,89.7,76.5,62.9,67.4,62.7,52.4,22.2,60.6]},"improved":[[6,"Afrikaans (Huistaal)",58.7,72.6,96.3],[5,"Sosiale Wetenskappe",62.2,75.0,91.1],[5,"Wiskunde",52.6,62.4,77.8],[4,"Afrikaans (Huistaal)",68.3,58.0,92.3],[7,"Wiskunde",54.2,17.3,75.7],[6,"Wiskunde",68.8,80.7,90.3]],"recovered":[[8,"Skeppende Kunste",95.4,15.7,96.3],[9,"Ekon. & Bestuurswet.",84.5,13.4,74.2],[8,"Natuurwetenskappe",97.7,49.4,79.0],[8,"Ekon. & Bestuurswet.",88.5,48.3,66.7],[9,"Skeppende Kunste",87.5,50.0,84.8]],"focus":[[8,"Wiskunde",11.5,26.4,27.2],[8,"Lewensoriëntering",94.3,90.8,70.4],[9,"Lewensoriëntering",93.1,95.6,78.8],[7,"Sosiale Wetenskappe",75.7,49.0,65.0],[7,"Engels (EAT)",90.7,84.8,76.7],[9,"Engels (EAT)",93.1,89.7,81.8]]};
+D.wins=[
+ {ic:"i-check",v:"87%",h:"Byna nege uit elke tien uitslae is ’n slaagpunt",p:"Van die 6 471 vakpunte in Kwartaal 3 het 86,8% die slaagvereiste gehaal. Dit is ons beste kwartaal vanjaar: Kwartaal 1 was 84% en Kwartaal 2 was 75%."},
+ {ic:"i-people",v:"769",h:"Leerders het elke vak geslaag",p:"Twee uit elke drie leerders het geen druipvak op hul Kwartaal 3-rapport nie. In Kwartaal 2 was dit 581."},
+ {ic:"i-star",v:"1 704",h:"Uitslae van 80% of hoër",p:"Meer as een uit elke vier punte was op onderskeidingsvlak — 664 meer as in Kwartaal 2."},
+ {ic:"i-rise",v:"9 uit 9",h:"Elke graad het verbeter",p:"Graad 1 tot 9 se slaagsyfer is almal hoër as in Kwartaal 2. Graad 2, 4, 5 en 6 is nou selfs hoër as aan die begin van die jaar."},
+ {ic:"i-target",v:"80%",h:"Wiskunde se beste kwartaal",p:"Vier uit elke vyf Wiskunde-uitslae is nou ’n slaagpunt, op van 70% in albei vorige kwartale."},
+ {ic:"i-book",v:"100%",h:"Graad R het alles geslaag, drie kwartale na mekaar",p:"Elke Graad R-leerder het elke vak geslaag, en 74% van hul punte was bo 80%."}];
+D.pills=[["Graad 2 Engels","99%"],["Graad 7 Ekon. & Bestuurswet.","99%"],["Graad 8 Tegnologie","98%"],["Graad 6 Afrikaans","96%"]];
+
+/* ---------- helpers ---------- */
+function el(n,a,t){var e=document.createElementNS("http://www.w3.org/2000/svg",n);
+  for(var k in a){if(a[k]!==null&&a[k]!==undefined)e.setAttribute(k,a[k]);} if(t!==undefined)e.textContent=t; return e;}
+function svg(w,h,label){var s=el("svg",{viewBox:"0 0 "+w+" "+h,role:"img","aria-label":label||""});s.style.width="100%";s.style.height="auto";s.style.overflow="visible";return s;}
+function txt(x,y,s,cls,an){var t=el("text",{x:x,y:y,"text-anchor":an||"middle"},s);t.setAttribute("class",cls||"axlab");return t;}
+function mount(id,n){var c=document.getElementById(id);if(!c)return;c.innerHTML="";c.appendChild(n);}
+function width(id){var c=document.getElementById(id);var w=c?c.clientWidth:720;return Math.max(300,Math.min(860,w||720));}
+function narrow(){return window.innerWidth<720;}
+function f1(v){return (Math.round(v*10)/10).toFixed(1);}
+function gname(i){return i===0?"Graad R":"Graad "+GR[i];}
+var KC=["var(--k1)","var(--k2)","var(--k3)"],KN=["Kwartaal 1","Kwartaal 2","Kwartaal 3"];
+
+/* ---------- tooltip ---------- */
+var tip=document.getElementById("tip"),tipOwner=null;
+function tipHTML(head,vals,note){
+  var h='<div class="h">'+head+'</div>';
+  vals.forEach(function(v,k){h+='<div class="r"><span><i style="background:'+KC[k]+'"></i>'+KN[k]+'</span><b>'+f1(v)+'%</b></div>';});
+  if(note)h+='<div class="n">'+note+'</div>';
+  return h;
+}
+function showTip(e,html,owner){
+  tip.innerHTML=html;tip.classList.add("on");tipOwner=owner;
+  if(owner){[].forEach.call(document.querySelectorAll(".hit.on"),function(n){n.classList.remove("on");});owner.classList.add("on");}
+  var p=e.touches?e.touches[0]:e,x=p.clientX,y=p.clientY,w=tip.offsetWidth,h=tip.offsetHeight;
+  var L=x+14,T=y-h-14;
+  if(L+w>window.innerWidth-8)L=x-w-14; if(L<8)L=8; if(T<8)T=y+18;
+  tip.style.left=L+"px";tip.style.top=T+"px";
+}
+function hideTip(){tip.classList.remove("on");if(tipOwner)tipOwner.classList.remove("on");tipOwner=null;}
+function bindHit(r,fn){
+  r.addEventListener("mouseenter",function(e){showTip(e,fn(),r);});
+  r.addEventListener("mousemove",function(e){showTip(e,fn(),r);});
+  r.addEventListener("mouseleave",hideTip);
+  r.addEventListener("click",function(e){e.stopPropagation();if(tipOwner===r)hideTip();else showTip(e,fn(),r);});
+}
+document.addEventListener("click",hideTip);
+window.addEventListener("scroll",function(){if(tipOwner)hideTip();},{passive:true});
+
+/* ---------- grouped columns: three quarters per grade ---------- */
+function grouped(id,ser,max,ticks,axisTitle,subRow,tipNote,label){
+  var W=width(id),H=narrow()?290:310,PL=38,PR=6,PT=26,PB=subRow?66:40;
+  var s=svg(W,H,label),iw=W-PL-PR,ih=H-PT-PB,bw=iw/10;
+  var y=function(v){return PT+ih-v/max*ih;};
+  ticks.forEach(function(g){
+    s.appendChild(el("line",{x1:PL,x2:W-PR,y1:y(g),y2:y(g),class:"ax","stroke-dasharray":g?"2 5":"0",opacity:g?.5:1}));
+    s.appendChild(txt(PL-8,y(g)+4,g+"%","axlab","end"));
+  });
+  var w=Math.max(5,Math.min(16,(bw-10)/3)),gap=2,gw=3*w+2*gap;
+  GR.forEach(function(g,i){
+    var x0=PL+bw*i+(bw-gw)/2;
+    [ser.t1[i],ser.t2[i],ser.t3[i]].forEach(function(v,k){
+      var x=x0+k*(w+gap),h=Math.max(2,ih-(y(v)-PT));
+      var gg=el("g",{class:"gro"});gg.style.transitionDelay=(i*45+k*30)+"ms";
+      var r=el("rect",{x:x,y:y(v),width:w,height:h,rx:Math.min(3,w/3)});r.style.fill=KC[k];
+      gg.appendChild(r);s.appendChild(gg);
+      /* square off the baseline end so only the data end is rounded */
+      var sq=el("rect",{x:x,y:PT+ih-Math.min(h,3),width:w,height:Math.min(h,3)});sq.style.fill=KC[k];gg.appendChild(sq);
+      if(k===2){var lb=txt(x+w/2,y(v)-7,Math.round(v),"vlab");lb.setAttribute("class","vlab pop");
+        lb.style.transitionDelay=(500+i*45)+"ms";lb.style.fontSize="11px";lb.style.fill="var(--ink)";s.appendChild(lb);}
+    });
+    s.appendChild(txt(PL+bw*i+bw/2,H-PB+22,GR[i],"axlab"));
+    if(subRow){var n=txt(PL+bw*i+bw/2,H-PB+38,subRow[i],"axlab");n.style.fontSize="9.5px";n.style.opacity=".8";s.appendChild(n);}
+    var hit=el("rect",{x:PL+bw*i,y:PT-14,width:bw,height:ih+14,class:"hit",rx:2,tabindex:0,"aria-label":gname(i)});
+    bindHit(hit,function(){return tipHTML(gname(i),[ser.t1[i],ser.t2[i],ser.t3[i]],tipNote?tipNote(i):"");});
+    hit.addEventListener("focus",function(){var b=hit.getBoundingClientRect();showTip({clientX:b.left+b.width/2,clientY:b.top+30},tipHTML(gname(i),[ser.t1[i],ser.t2[i],ser.t3[i]],tipNote?tipNote(i):""),hit);});
+    hit.addEventListener("blur",hideTip);
+    s.insertBefore(hit,s.firstChild);
+  });
+  s.appendChild(txt(PL+iw/2,H-4,axisTitle,"axlab"));
+  mount(id,s);
+}
+function chartGrade(){
+  grouped("chartGrade",D.gradePass,100,[0,25,50,75,100],"GRAAD  ·  AANTAL LEERDERS IN KWARTAAL 3 ONDER",D.learners,
+    function(i){return D.learners[i]+" leerders · "+Math.round(D.allPass.t3[i])+"% slaag alle vakke";},"Slaagsyfer per graad, drie kwartale");
+}
+function chartDist(){
+  grouped("chartDist",D.dist80,80,[0,20,40,60,80],"GRAAD",null,
+    function(){return "Aandeel uitslae van 80%+";},"Uitslae van 80% of hoër per graad");
+}
+
+/* ---------- maths: three dots per grade ---------- */
+function chartMaths(){
+  var id="chartMaths",nw=narrow(),W=width(id),H=nw?330:300,PL=nw?34:40,PR=nw?8:44,PT=30,PB=nw?78:62;
+  var s=svg(W,H,"Wiskunde-slaagsyfer per graad"),iw=W-PL-PR,ih=H-PT-PB,bw=iw/10;
+  var y=function(v){return PT+ih-v/100*ih;};
+  [0,50,100].forEach(function(g){
+    s.appendChild(el("line",{x1:PL,x2:W-PR,y1:y(g),y2:y(g),class:"ax","stroke-dasharray":g===50?"2 5":"0",opacity:g===50?.6:1}));
+    s.appendChild(txt(PL-8,y(g)+4,g+"%","axlab","end"));
+  });
+  var off=Math.min(9,bw*0.22);
+  GR.forEach(function(g,i){
+    var cx=PL+bw*i+bw/2,v=[D.maths.t1[i],D.maths.t2[i],D.maths.t3[i]],xs=[cx-off,cx,cx+off];
+    var hit=el("rect",{x:PL+bw*i,y:PT-16,width:bw,height:ih+32,class:"hit",rx:2,tabindex:0,"aria-label":gname(i)+" Wiskunde"});
+    var tf=function(){return tipHTML(gname(i)+" · Wiskunde",v,"");};
+    bindHit(hit,tf);
+    hit.addEventListener("focus",function(){var b=hit.getBoundingClientRect();showTip({clientX:b.left+b.width/2,clientY:b.top+30},tf(),hit);});
+    hit.addEventListener("blur",hideTip);
+    s.appendChild(hit);
+    var gg=el("g",{class:"pop"});gg.style.transitionDelay=(i*55)+"ms";
+    var pl=el("polyline",{points:xs.map(function(x,k){return x+","+y(v[k]);}).join(" "),fill:"none","stroke-width":2,"stroke-linejoin":"round","stroke-linecap":"round"});
+    pl.style.stroke="var(--border-strong)";gg.appendChild(pl);
+    v.forEach(function(val,k){
+      var c=el("circle",{cx:xs[k],cy:y(val),r:k===2?5.5:4});c.style.fill=KC[k];
+      c.style.stroke="var(--surface)";c.style.strokeWidth="2";gg.appendChild(c);
+    });
+    if(!nw){var lb=txt(xs[2],y(v[2])+(v[2]>=Math.max(v[0],v[1])-3?-12:19),Math.round(v[2])+"%","vlab");
+      lb.style.fill="var(--ink)";lb.style.fontSize="11.5px";gg.appendChild(lb);}
+    s.appendChild(gg);
+    s.appendChild(txt(cx,H-PB+24,g,"axlab"));
+    var dv=Math.round((v[2]-v[1])*10)/10,ad=Math.abs(dv);
+    var mag=(nw?ad>=1:ad>=10)?String(Math.round(ad)):ad.toFixed(1).replace(".",",");
+    var row=H-PB+41;
+    if(nw){var vl=txt(cx,row,Math.round(v[2])+"%","vlab");vl.style.fill="var(--ink)";vl.style.fontSize="10px";s.appendChild(vl);row+=16;}
+    var dl=txt(cx,row,dv>0?(nw?"+":"▲ +")+mag:(dv<0?(nw?"−":"▼ −")+mag:"–"),"axlab");
+    dl.style.fill=dv>0?"var(--up)":(dv<0?"var(--down)":"var(--ink-faint)");
+    dl.style.fontSize=nw?"9.5px":"10.5px";s.appendChild(dl);
+  });
+  s.appendChild(txt(PL+iw/2,H-4,nw?"GRAAD · K3 · VERANDERING K2→K3":"GRAAD  ·  VERANDERING VAN KWARTAAL 2 NA 3","axlab"));
+  mount(id,s);
+}
+
+/* ---------- tables ---------- */
+function cls(d){return d>0.05?"up":(d<-0.05?"dn":"");}
+function sgn(d){return (d>0?"+":"")+f1(d);}
+function tables(){
+  var h='<table><thead><tr><th>Graad</th><th>Leerders (K3)</th><th>K1 %</th><th>K2 %</th><th>K3 %</th><th>K2→K3</th><th>Slaag alle vakke (K3)</th></tr></thead><tbody>';
+  GR.forEach(function(g,i){var a=D.gradePass,d=a.t3[i]-a.t2[i];
+    h+='<tr><td>'+gname(i)+'</td><td>'+D.learners[i]+'</td><td>'+f1(a.t1[i])+'</td><td>'+f1(a.t2[i])+'</td><td>'+f1(a.t3[i])+'</td><td class="'+cls(d)+'">'+sgn(d)+'</td><td>'+f1(D.allPass.t3[i])+'%</td></tr>';});
+  document.getElementById("tblGrade").innerHTML=h+'</tbody></table>';
+  h='<table><thead><tr><th>Graad</th><th>K1 %</th><th>K2 %</th><th>K3 %</th><th>K2→K3</th><th>K1→K3</th></tr></thead><tbody>';
+  GR.forEach(function(g,i){var a=D.maths,d=a.t3[i]-a.t2[i],e=a.t3[i]-a.t1[i];
+    h+='<tr><td>'+gname(i)+'</td><td>'+f1(a.t1[i])+'</td><td>'+f1(a.t2[i])+'</td><td>'+f1(a.t3[i])+'</td><td class="'+cls(d)+'">'+sgn(d)+'</td><td class="'+cls(e)+'">'+sgn(e)+'</td></tr>';});
+  document.getElementById("tblMaths").innerHTML=h+'</tbody></table>';
+}
+
+/* ---------- subject bars (three thin tracks) ---------- */
+function bars(target,rows,showGrade){
+  var h="";
+  rows.forEach(function(r){
+    var nm=showGrade?("Gr "+(r[0]===0?"R":r[0])+" · "+r[1]):r[0];
+    var v=showGrade?[r[2],r[3],r[4]]:[r[1],r[2],r[3]];
+    var d=v[2]-v[1],up=d>0.05,dn=d<-0.05;
+    var ar=up?'<span class="ar" style="color:var(--up)" aria-label="op">&#9650;</span>':(dn?'<span class="ar" style="color:var(--down)" aria-label="af">&#9660;</span>':'<span class="ar">&ndash;</span>');
+    h+='<div class="sbar"><div class="top"><span class="nm">'+nm+'</span>'+
+       '<span class="vals" title="Kwartaal 1 · 2 · 3">'+Math.round(v[0])+' · '+Math.round(v[1])+ar+'<b>'+Math.round(v[2])+'%</b></span></div>'+
+       '<div class="tracks">'+
+       '<div class="tr k1"><i style="width:'+v[0]+'%"></i></div>'+
+       '<div class="tr k2"><i style="width:'+v[1]+'%"></i></div>'+
+       '<div class="tr k3"><i style="width:'+v[2]+'%"></i></div></div></div>';
+  });
+  document.getElementById(target).innerHTML=h;
+}
+
+var curGrade=4;
+function renderSubjects(){
+  var rows=D.byGrade[String(curGrade)];
+  document.getElementById("subjTitle").textContent=gname(curGrade)+"  ·  "+D.learners[curGrade]+" leerders";
+  bars("subjBars",rows,false);
+  var p=document.getElementById("subjPanel");p.classList.remove("in");void p.offsetWidth;p.classList.add("in");
+}
+
+function buildChips(){
+  var h="";
+  GR.forEach(function(g,i){h+='<button type="button" class="chip'+(i===curGrade?" on":"")+'" data-g="'+i+'" aria-pressed="'+(i===curGrade)+'">'+(i===0?"Gr R":"Gr "+g)+'</button>';});
+  var box=document.getElementById("gradeChips");box.innerHTML=h;
+  [].forEach.call(box.querySelectorAll(".chip"),function(c){
+    c.addEventListener("click",function(){
+      [].forEach.call(box.querySelectorAll(".chip"),function(o){o.classList.remove("on");o.setAttribute("aria-pressed","false");});
+      c.classList.add("on");c.setAttribute("aria-pressed","true");
+      curGrade=parseInt(c.getAttribute("data-g"),10);renderSubjects();
+    });
+  });
+}
+
+function buildWins(){
+  var h="";
+  D.wins.forEach(function(w){
+    h+='<div class="win"><span class="ic"><svg aria-hidden="true"><use href="#'+w.ic+'"/></svg></span>'+
+       '<span class="v">'+w.v+'</span><h3>'+w.h+'</h3><p>'+w.p+'</p></div>';
+  });
+  document.getElementById("wins").innerHTML=h;
+  var p="";
+  D.pills.forEach(function(x){p+='<span class="pill good"><b>'+x[1]+'</b>'+x[0]+'</span>';});
+  document.getElementById("winPills").innerHTML=p;
+}
+
+function charts(){chartGrade();chartMaths();chartDist();}
+function init(){
+  buildWins();buildChips();
+  bars("topSubjects",D.subjects.slice(0,5),false);
+  bars("improved",D.improved,true);
+  bars("recovered",D.recovered,true);
+  bars("focus",D.focus,true);
+  renderSubjects();tables();charts();
+
+  var root=document.documentElement,btn=document.getElementById("themeBtn");
+  root.setAttribute("data-theme","light");
+  btn.addEventListener("click",function(){
+    var d=root.getAttribute("data-theme")==="dark";
+    root.setAttribute("data-theme",d?"light":"dark");
+    btn.setAttribute("aria-label",d?"Skakel oor na donker modus":"Skakel oor na ligte modus");
+    btn.setAttribute("aria-pressed",String(!d));
+    var m=document.querySelector("meta[name=theme-color]");if(m)m.setAttribute("content",d?"#FCFDFE":"#070D14");
+  });
+
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+    },{threshold:.14,rootMargin:"0px 0px -5% 0px"});
+    [].forEach.call(document.querySelectorAll(".rv"),function(n){io.observe(n);});
+  } else {[].forEach.call(document.querySelectorAll(".rv"),function(n){n.classList.add("in");});}
+
+  var bar=document.getElementById("prog"),top=document.getElementById("topbar"),t=false;
+  function onScroll(){
+    var sy=window.pageYOffset,h=document.body.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?Math.min(100,sy/h*100):0)+"%";
+    top.classList.toggle("on",sy>150);t=false;
+  }
+  window.addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(onScroll);}},{passive:true});
+  onScroll();
+
+  var rt,lw=window.innerWidth;window.addEventListener("resize",function(){clearTimeout(rt);
+    rt=setTimeout(function(){if(window.innerWidth!==lw){lw=window.innerWidth;charts();}},220);});
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
+})();
+</script>
+</body>
+</html>
